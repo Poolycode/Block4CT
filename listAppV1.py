@@ -13,24 +13,28 @@ myList = []
 
 def mainProgram():
     while True:
-        print("Hello, there! Let's work with lists!")
-        print("Chose one of the following options.   Type a number ONLY!")
-        choice = input("""1. Add to list,
-2. Return the calue at an index position
-3. End program    """)
-        if choice == "1":
-            addToList()
-        elif choice == "2":
-            indexValues
-        elif choice == "3":
-            break
-    #we need to add an exit program AAAAAND error catching!
-
+        try:
+            print("Hello, there! Let's work with lists!")
+            print("Chose one of the following options.   Type a number ONLY!")
+            choice = input("""1. Add to list,
+    2. Return the calue at an index position
+    3. Random choice
+    4. End program    """)
+            if choice == "1":
+                addToList()
+            elif choice == "2":
+                indexValues
+            elif choice == "3":
+                randomSearch()
+            else:
+                break
+        except:
+            print("An error occurred")
         
 def addToList():
     newItem = input("please type an intager!    ")
     myList.append(int(newItem))
-    pring(myList)
+    print(myList)
 
 def indexValues():
     indexPos = input("What index position would you like to look at?")
@@ -38,7 +42,7 @@ def indexValues():
         
 def randomSearch():
     print("here's a random value from your list!")
-    pring(myList[random.randint(0, len(myList)-1)])
+    print(myList[random.randint(0, len(myList)-1)])
 
 if __name__ == "__main__":
     mainProgram()
