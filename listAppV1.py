@@ -18,9 +18,9 @@ def mainProgram():
             print("Chose one of the following options.   Type a number ONLY!")
             choice = input("""1. Add to list,
 2. Add a bunch of numbers
-3. Return the calue at an index position
+3. Return the number at an index position
 4. Print contence of list
-5. Random choice
+5. Random Choice
 6. Liear Search
 7. End program    """)
             if choice == "1":
@@ -28,7 +28,7 @@ def mainProgram():
             elif choice == "2":
                 addABunch()
             elif choice == "3":
-                indexValues
+                indexValues()
             elif choice == "4":
                 print(myList)
             elif choice == "5":
@@ -46,10 +46,10 @@ def addToList():
     print(myList)
 
 def addABunch():
-    print("we're gonna add a bunch of numbers!")
-    numToAdd = inpit("How many integers do you want to add?   ")
-    num = input("And how high would you like these numbers to go?   ")
-    for x in range(0, int(numberToAdd)):
+    print("We're gonna add a bunch of numbers!")
+    numToAdd = input("How many integers do you want to add?   ")
+    numRange = input("And how high would you like these numbers to go?   ")
+    for x in range(0, int(numToAdd)):
         myList.append(random.randint(0,int(numRange)))
     print("Your list is now complete!")
 
@@ -62,11 +62,12 @@ def randomSearch():
     print(myList[random.randint(0, len(myList)-1)])
 
 def linearSearch():
-    pring("we're going to search through the IN THE WORST WAY POSSINLE!")
+    print("We're going to search through the IN THE WORST WAY POSSINLE!")
     searchItem = input("What are you looking for?  Number-wise?  ")
     for x in range(len(myList)):
         if myList[x] == int(searchItem):
             print("Your item is at index {}".format(x))
+    print("Your number appeared {} times in the list".format(indexCount))
 
 if __name__ == "__main__":
     mainProgram()
