@@ -40,14 +40,14 @@ def mainProgram():
                 linearSearch()
             elif choice == "7":
                 binsearch = input("What number are you looking for?   ")
-                recursiveBinarySearch(unique_list, 0, len(unique_list)-1, int (binSearch))
+                recursiveBinarySearch(unique_list, 0, len(unique_list)-1, int(binSearch))
             elif choice == "8":
                 binSearch = input("What number are you looking for?  ")
                 result = iterativeBinarySearch(unique_list, int(binSearch))
                 if result != -1:
                     print("your number is at index posionion {}".format(result))
                 else:
-                    print("Your number is not found in that list, bud!")
+                    print("Your number is not found in that list.")
             elif choice == "9":
                 printLists()
             else:
@@ -112,11 +112,8 @@ def recursiveBinarySearch(unique_list, low, high, x):
 
         if uniquelist[mid] == x:
             print("Your number is at position {}".format(mid))
-            return mid
-        
         elif unique_list[mid] > x:
             return recursiveBinarySearch(unique_list, low, mid - 1, x)
-        
         else:
             return recursiveBinarySearch(unique_list, mid + 1, high, x)
     else:
@@ -124,7 +121,7 @@ def recursiveBinarySearch(unique_list, low, high, x):
 
 def iterativeBinarySearch(unique_list, x):
     low = 0
-    high = len(unique_list)-1
+    high = len(unique_list) - 1
     mid = 0
 
     while low <= high:
