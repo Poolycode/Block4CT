@@ -52,6 +52,8 @@ def mainProgram():
                 printLists()
             else:
                 break
+        except:
+            print("There was an error")
 
 def addToList():
     print("Adding to a list! Great choice!")
